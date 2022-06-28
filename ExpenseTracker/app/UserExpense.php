@@ -23,4 +23,7 @@ class UserExpense extends Model
    
     protected $table = 'user_expense';
 
+    public $timestamps = false;
+
+
 }

@@ -24,3 +24,6 @@ Route::get('foo', function () {
 Route::get('Expense/{id}', 'ExpenseController@show');
 Route::delete('RemoveExpense/{id}', 'ExpenseController@delExpense');
 Route::get('Expenses', 'ExpenseController@all');
+
+
+Route::post('UpdateExpense','ExpenseController@createUpdateExpense');

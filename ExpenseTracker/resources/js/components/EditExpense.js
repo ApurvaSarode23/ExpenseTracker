@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 
 import axios from 'axios';
 
-class ExpenseView extends Component {
+class EditExpense extends Component {
 
     state = {
         edata: []
@@ -28,7 +28,7 @@ class ExpenseView extends Component {
     getallexpensedata(){
         axios.get(`/Expenses`)
         .then(res => {
-
+        
           const edata = res.data;
           this.setState({ edata });
         })
@@ -117,7 +117,7 @@ class ExpenseView extends Component {
               </TableCell>
               <TableCell align="right">{row.price}</TableCell>
               <TableCell align="right">{row.description}</TableCell>
-              <TableCell align="right"><Button variant="contained" color="primary" onClick={()=>this.props.handleModal(true,row.id)}>Edit</Button></TableCell>
+              <TableCell align="right"><Button variant="contained" color="primary" onClick={()=>this.editExpese(row.id)}>Edit</Button></TableCell>
               <TableCell align="right"><Button variant="contained" color="error" onClick={()=>this.deleteExpense(row.id)}>Delete</Button></TableCell>
             </TableRow>
           ))}
